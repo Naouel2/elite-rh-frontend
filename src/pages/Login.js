@@ -3,6 +3,7 @@ import loginImage from "../images/loginImage.png"
 import logo from "../images/logo.png"
 
 const Login = () => {
+    console.log(process.env.REACT_APP_API_URL);
 
     return (
         <div className="login-container">
