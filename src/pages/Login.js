@@ -33,6 +33,8 @@ const Login = () => {
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem('token', data.token); // Save token to localStorage
+                localStorage.setItem('userId', data.userId); // Save token to localStorage
+                localStorage.setItem('roles', JSON.stringify(data.roles)); // Save token to localStorage
                 navigate('/home'); // Redirect to home
             } else {
                 const errorData = await response.json();
@@ -57,7 +59,7 @@ const Login = () => {
                         value={email}
                         onChange={handleEmailChange}
                     />
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Mot de passe</label>
                     <input
                         type="password"
                         name="password"

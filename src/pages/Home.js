@@ -1,7 +1,8 @@
 
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-//components
+
+// Components
 import Header from "../components/Header"
 import MainHeadline from "../components/MainHeadline";
 import FormationCard from "../components/FormationCard";
@@ -18,8 +19,8 @@ const Home = () => {
       };
 
       const navigate = useNavigate();
-      const handleCardClick = () => {
-        navigate("/formation");
+      const handleCardClick = (formationId) => {
+        navigate(`/formation/${formationId}`);
       };
       
     return (
@@ -28,7 +29,7 @@ const Home = () => {
             <MainHeadline/>
             <div className="formation-part container">
                 <div className="title-searchbar">
-                    <h2>
+                    <h2 className="home-title">
                         Nos formations
                     </h2>
                     <form onSubmit={handleSubmit}>
