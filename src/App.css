@@ -5,7 +5,8 @@
 }
 
 .container {
-  margin: 0% 5%;
+  margin: 0% auto;
+  min-height: 100%;
 }
 
 /* Login Page */
@@ -48,14 +49,14 @@
 }
 
 .login-form h2 {
-  font-size: 35px;
+  font-size: 25px;
   color: #243E63;
   text-align: center;
   margin-bottom: 20px;
 }
 
 .login-form label {
-  font-size: 25px;
+  font-size: 20px;
   color: #243E63;
   font-weight: 500;
   margin-bottom: 10px;
@@ -73,12 +74,14 @@
   border: none;
   background-color: #6415FF;
   color: white;
-  border-radius: 6px;
-  padding: 10px;
   margin-top: 10px;
   font-size: 20px;
   font-weight: 500;
   width: 106%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
 }
 
 /*Header*/
@@ -102,7 +105,10 @@
   color: #6415FF;
 }
 
-
+.logo-header-logout {
+  width: 50%;
+  height: 50%;
+}
 
 /*Home page*/
 
@@ -121,7 +127,6 @@ p {
   font-size: 16px;
   color: #243E63; 
 }
-
 
 .main-headline {
   display: flex;
@@ -147,13 +152,15 @@ p {
   object-position: center;
 }
 
-
 .main-headline > div > h1,span {
   font-size: 30px;
 }
 
+
+
 .title-searchbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -161,6 +168,7 @@ p {
   display: flex;
   align-items: center;
   margin: 0% 0% 5% 5%;
+  width: 60%;
 }
 
 .title-searchbar > form > input {
@@ -168,34 +176,35 @@ p {
   border: 2px solid #6415FF;
   border-radius: 8px;
   margin-right: 5%;
-  width: 300px;
+  width: 100%;
 }
 
 .title-searchbar > form > button {
 background-color: #6415FF;
 color: white;
 padding: 3%;
-border-radius: 8px;
+border-radius: 5px;
 border: none;
 width: 150px;
+font-size: 16px;
+cursor: pointer;
 }
 
 /* FormationCard component */
 
-.formation-card {
+.formation-part {
   display: flex;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  cursor: pointer;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 60%;
 }
 
 .formation-card-bottom {
   padding: 3%;
   border: #6415FF 2px solid;
-  width: 20%;
+  /* width: 20%; */
   margin-bottom: 2%;
+  cursor: pointer;
 }
 
 .formation-card-bottom > h3{
@@ -210,6 +219,7 @@ width: 150px;
 .date-localisation img {
 margin-right: 5%;
 width: 20px;
+height: 20px;
 }
 
 /* Footer */
@@ -233,11 +243,19 @@ margin-bottom: 2%;
 
 /*Page Formation */
 
+.formation-normal {
+  background-color: #fff;
+}
+
+.formation-modal {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 .formation-detail{
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  height: 100vh;
 }
 
 .formation-detail > img {
@@ -300,22 +318,278 @@ margin: 2% 0%;
   border: none;
   padding: 4%;
   width: 150px;
-  border-radius: 6px;
+  border-radius: 5px;
   margin-top: 5%;
+  font-size: larger;
 }
 
+.disabled-button {
+  cursor: not-allowed;
+}
 
+/* Modal */
 
+.modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 
+.modal-content {
+  background: #fff;
+  padding: 8%;
+  border-radius: 4px;
+  max-width: 500px;
+  width: 100%;
+}
 
+.modal-header,
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.modal-header h4 {
+  margin: 0;
+}
+
+.modal-body {
+  margin: 5% 0;
+}
+
+.modal-footer button {
+  padding: 3% 5%;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.modal-footer button:first-child {
+  background: #ccc;
+}
+
+.modal-footer button:last-child {
+  background: #0a721b;
+  color: #fff;
+}
+
+/* Page A propos (About) */
+.about-content {
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.about-content p {
+  margin-bottom: 1em;
+}
+
+.about-content ul {
+  margin-top: 1em;
+  padding-left: 20px;
+}
+
+.about-content ul li {
+  margin-bottom: 0.5em;
+}
+
+/* Page Profile */
+
+.profile-page {
+  height: 100vh;
+}
+
+.reservation-card {
+  position: relative;
+}
+
+.delete-icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+/* Page Admin */
+.tabs {
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tabs-switch {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+}
+
+.button-create {
+  background-color: #0a721b;
+  padding: 1% 2%;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.tabs button:not(.button-create) {
+  padding: 1% 2%;
+  border: none;
+  background-color: #6415FF;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-right: 3%;
+  border-radius: 5px;
+}
+
+.tabs button:hover {
+  background-color: #243E63;
+}
+
+.content {
+  margin-top: 2%;
+}
+
+.users-view, .reservations-view {
+  width: 100%;
+}
+
+.tab-title {
+  margin-bottom: 2%;
+}
+
+.user-name {
+  font-size: 18px;
+  margin-bottom: 2%;
+}
+
+/* Page CreateUser */
+/* Title and search bar section */
+.title-searchbar {
+  margin-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.title-searchbar h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  /* margin: 0; */
+}
+
+/* Form styling */
+.users-view {
+  margin: 0 auto;
+}
+
+.users-view form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.users-view form div {
+  margin-bottom: 1.5rem;
+}
+
+.users-view form label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.users-view form input[type="text"],
+.users-view form input[type="email"],
+.users-view form input[type="tel"] 
+.users-view form input[type="date"] {
+  width: 100%;
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  padding: 2% 3%;
+  font-size: 1rem;
+}
+
+.users-view form input[type="text"]:focus,
+.users-view form input[type="email"]:focus,
+.users-view form input[type="tel"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.tel-input {
+  width: 100%;
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  padding: 2% 3%;
+  font-size: 1rem;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2% 3%;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  height: 4rem;
+}
+
+.date-input {
+  width: 100%;
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  padding: 2% 3%;
+  font-size: 1rem;
+}
+
+/* Button styling */
+.users-view form button[type="submit"] {
+  align-self: flex-start;
+  background-color:#6415FF;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.users-view form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.users-view form button[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
 
 /*------------Responsive-----------*/
 
-/* Pour les tablettes */
-
-
 @media only screen and (max-width: 768px) {
+  
+  /* Header */
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 
   /*Login page*/
 
@@ -323,12 +597,13 @@ margin: 2% 0%;
     flex-direction: column-reverse;
     align-items: center;
     margin: 0 auto;
-    padding: 10%;
+    padding: 0;
+    height: 100vh;
   }
 
-  .login-form{
+  .login-form {
     width: 90%; 
-    
+    padding-bottom: 5%;
   }
   .login-form > form {
     width: calc(100% - 10%); 
@@ -337,41 +612,164 @@ margin: 2% 0%;
     align-items: center; 
     padding: 5%;
   }
-  
-
-  .login-img {
-    width: 100%; 
-   
+  .login-form h2 {
+    font-size: 1.5rem;
+  }  
+  .login-form label {
+  font-size: 1.2rem;
   }
-
+  
+  .login-img {
+    width: 100%;   
+  }
   .login-img > img {
     height: 400px;
     object-fit: cover;
     object-position: top;
-}
-
-.login-form button {
-  border: none;
-  background-color: #6415FF;
-  color: white;
-  border-radius: 6px;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: 500;
-  width: 108%;
-}
-
-  
-}
-
-/* Pour les mobiles */
-@media only screen and (max-width: 480px) {
-
-  /*Login page*/
-
-  .login-form {
-    width: 90%; 
   }
 
+  .login-form button {
+    border: none;
+    background-color: #6415FF;
+    color: white;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    width: 108%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /*  Main Headline */
+
+  .main-headline {
+    height: 40%;
+  }
+
+  .main-headline > div > p {
+    font-size: 0.9rem;
+  }
+  
+  /*Home page*/
+
+  .container {
+    margin: 2% 3% 5% 3%;
+    min-height: 100%;
+  }
+
+  .formation-part {
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+
+  .title-searchbar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title-searchbar > form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0% 1%;
+  }
+
+  .home-title {
+    margin-bottom: 5%;
+  }
+
+  /*Formation page */
+  .formation-detail {
+    margin: 0% 3%;
+    height: 100vh;
+  }
+  .formation-detail > img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .formation-bord {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+  }
+  .formation-bord > div {
+    width: 100% !important;
+    border: #6415FF 1px solid !important;
+    margin-bottom: 3%;
+    box-sizing: border-box;
+    padding: 3%;
+  }
+  .formation-bord > div > h2 {
+    font-size: 1.3rem;
+  }
+  .formation-bord > div > h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 2% !important;
+  }
+  .formation-bord > div > p {
+    font-size: 1rem !important;
+    margin-bottom: 2% !important;
+  }
+  .formation-bord > div:last-child > button {
+    color: white;
+    background-color: #6415FF;
+    border: none;
+    padding: 2% 3%;
+    width: 150px;
+    border-radius: 5px;
+    margin-top: 1%;
+    font-size: larger;
+  }
+
+  .modal {
+    width: 400px;
+  }
+
+  .modal-content {
+    padding: 6%;
+  }
+
+  /* CreateUser page */
+  .users-view form {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: 100%;
+    max-width: 600px;
+  }
+  .users-view form div {
+    margin-bottom: 1.2rem;
 }
+
+  .users-view form input[type="text"], 
+  .users-view form input[type="email"], 
+  .users-view form input[type="tel"] {
+    width: 100%;
+    padding: 0;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+    padding: 2% 3%;  
+    height: 3rem;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 0px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    padding: 2% 3%;  
+    height: 4rem;
+  }
+
+
+
+}
+
+
